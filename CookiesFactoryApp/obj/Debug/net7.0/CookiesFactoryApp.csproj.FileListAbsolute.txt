@@ -1,0 +1,28 @@
+C:\Users\User\Desktop\CookiesFactoryApp\CookiesFactoryApp\bin\Debug\net7.0\CookiesFactoryApp.exe
+C:\Users\User\Desktop\CookiesFactoryApp\CookiesFactoryApp\bin\Debug\net7.0\CookiesFactoryApp.deps.json
+C:\Users\User\Desktop\CookiesFactoryApp\CookiesFactoryApp\bin\Debug\net7.0\CookiesFactoryApp.runtimeconfig.json
+C:\Users\User\Desktop\CookiesFactoryApp\CookiesFactoryApp\bin\Debug\net7.0\CookiesFactoryApp.dll
+C:\Users\User\Desktop\CookiesFactoryApp\CookiesFactoryApp\bin\Debug\net7.0\CookiesFactoryApp.pdb
+C:\Users\User\Desktop\CookiesFactoryApp\CookiesFactoryApp\obj\Debug\net7.0\CookiesFactoryApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\CookiesFactoryApp\CookiesFactoryApp\obj\Debug\net7.0\CookiesFactoryApp.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\CookiesFactoryApp\CookiesFactoryApp\obj\Debug\net7.0\CookiesFactoryApp.AssemblyInfo.cs
+C:\Users\User\Desktop\CookiesFactoryApp\CookiesFactoryApp\obj\Debug\net7.0\CookiesFactoryApp.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\CookiesFactoryApp\CookiesFactoryApp\obj\Debug\net7.0\CookiesFactoryApp.dll
+C:\Users\User\Desktop\CookiesFactoryApp\CookiesFactoryApp\obj\Debug\net7.0\refint\CookiesFactoryApp.dll
+C:\Users\User\Desktop\CookiesFactoryApp\CookiesFactoryApp\obj\Debug\net7.0\CookiesFactoryApp.pdb
+C:\Users\User\Desktop\CookiesFactoryApp\CookiesFactoryApp\obj\Debug\net7.0\CookiesFactoryApp.genruntimeconfig.cache
+C:\Users\User\Desktop\CookiesFactoryApp\CookiesFactoryApp\obj\Debug\net7.0\ref\CookiesFactoryApp.dll
+C:\Users\User\Desktop\Cookies Factory app(old version)\CookiesFactoryApp\CookiesFactoryApp\obj\Debug\net7.0\CookiesFactoryApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Cookies Factory app(old version)\CookiesFactoryApp\CookiesFactoryApp\obj\Debug\net7.0\CookiesFactoryApp.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Cookies Factory app(old version)\CookiesFactoryApp\CookiesFactoryApp\obj\Debug\net7.0\CookiesFactoryApp.AssemblyInfo.cs
+C:\Users\User\Desktop\Cookies Factory app(old version)\CookiesFactoryApp\CookiesFactoryApp\obj\Debug\net7.0\CookiesFactoryApp.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Cookies Factory app(old version)\CookiesFactoryApp\CookiesFactoryApp\obj\Debug\net7.0\CookiesFactoryApp.dll
+C:\Users\User\Desktop\Cookies Factory app(old version)\CookiesFactoryApp\CookiesFactoryApp\obj\Debug\net7.0\refint\CookiesFactoryApp.dll
+C:\Users\User\Desktop\Cookies Factory app(old version)\CookiesFactoryApp\CookiesFactoryApp\obj\Debug\net7.0\CookiesFactoryApp.pdb
+C:\Users\User\Desktop\Cookies Factory app(old version)\CookiesFactoryApp\CookiesFactoryApp\bin\Debug\net7.0\CookiesFactoryApp.exe
+C:\Users\User\Desktop\Cookies Factory app(old version)\CookiesFactoryApp\CookiesFactoryApp\bin\Debug\net7.0\CookiesFactoryApp.deps.json
+C:\Users\User\Desktop\Cookies Factory app(old version)\CookiesFactoryApp\CookiesFactoryApp\bin\Debug\net7.0\CookiesFactoryApp.runtimeconfig.json
+C:\Users\User\Desktop\Cookies Factory app(old version)\CookiesFactoryApp\CookiesFactoryApp\bin\Debug\net7.0\CookiesFactoryApp.dll
+C:\Users\User\Desktop\Cookies Factory app(old version)\CookiesFactoryApp\CookiesFactoryApp\bin\Debug\net7.0\CookiesFactoryApp.pdb
+C:\Users\User\Desktop\Cookies Factory app(old version)\CookiesFactoryApp\CookiesFactoryApp\obj\Debug\net7.0\CookiesFactoryApp.genruntimeconfig.cache
+C:\Users\User\Desktop\Cookies Factory app(old version)\CookiesFactoryApp\CookiesFactoryApp\obj\Debug\net7.0\ref\CookiesFactoryApp.dll

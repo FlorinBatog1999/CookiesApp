@@ -1,0 +1,5 @@
+enum FileType
+{
+    TEXT,
+    JSON
+}
