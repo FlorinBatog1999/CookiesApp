@@ -1,5 +1,8 @@
-class FilesRepository
+interface IFilesRepository
 {
+    public List<string> ReadFile(string inputPath);
+    public void WriteFile(string inputPath, IEnumerable<string> inputContent);
+    public string GetFilePath();
 
     public static void CreateFile(string inputPath){
         System.Console.WriteLine($"Create the file on the path {inputPath}...");
@@ -33,18 +36,6 @@ class FilesRepository
             CreateFile(filePath);
         }    
     }
-
-    public  string GetFilePath()
-    {
-        if (UserOptionsRepository.USERFILEOPTION==0)
-        {
-            return UserOptionsRepository.FILEPATHTEXT;
-        }else
-        {
-            return UserOptionsRepository.FILEPATHJSON;
-        }
-    }
-
 
 
 }

@@ -13,4 +13,14 @@ class UserOptionsRepository
 
     public static void ShowUserOption() => System.Console.WriteLine($"User file option: {UserOptionsRepository.USERFILEOPTION}");
 
+    public static void Exit(){
+        System.Console.WriteLine("The cookies factory app finished. Press any key to exit.");
+        Console.ReadKey();
+    }
+
+    public static string GetTypedUserContent(){
+        System.Console.WriteLine("Type the ingredient ID.");
+        return Console.ReadLine();
+    }
+
 }

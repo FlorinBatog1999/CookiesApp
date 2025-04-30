@@ -1,21 +1,26 @@
-static class Recipe
+class Recipe: IRecipe
 {
-    public static List<string> GetRecipes()
+
+    FilesRepositoryText filesRepositoryText;
+    FilesRepositoryJSON filesRepositoryJSON;
+
+
+    public List<string> GetRecipes()
     {
         var recipesList=new List<string>();
         if(UserOptionsRepository.USERFILEOPTION==0)
         {
-            recipesList=FilesRepositoryText.ReadTextFile(UserOptionsRepository.FILEPATHTEXT).Split(Environment.NewLine).ToList();
+            recipesList=filesRepositoryText.ReadFile(UserOptionsRepository.FILEPATHTEXT);
             recipesList=recipesList.Where(x=>String.IsNullOrEmpty(x) is false).ToList();
         }
         else{
-            recipesList=FilesRepositoryJSON.ReadJSONFile(UserOptionsRepository.FILEPATHJSON);
+            recipesList=filesRepositoryJSON.ReadFile(UserOptionsRepository.FILEPATHJSON);
         }
 
         return recipesList;
     }
 
-    public static void PrintRecipes(List<string> listOfRecipes){
+    public void PrintRecipes(List<string> listOfRecipes){
         int recipeCounter=1;
         foreach (var recipe in listOfRecipes)
         {
@@ -30,7 +35,7 @@ static class Recipe
         }
     }
 
-    public static List<string> AddRecipe(string userInput,List<string> recipesList, List<Ingredient> listOfIngredients){
+    public List<string> AddRecipe(string userInput,List<string> recipesList, List<Ingredient> listOfIngredients){
         var maxID=GetMaxID(listOfIngredients);
         List<string> newRecipe=new List<string>();
 
@@ -51,7 +56,7 @@ static class Recipe
         return recipesList;
     }
 
-    public static int GetMaxID(List<Ingredient> ingredients){
+    public int GetMaxID(List<Ingredient> ingredients){
         System.Console.WriteLine("Get the mximum ID from the ingredients database...");
         int MaxValue=0;
         foreach (var ingredient in ingredients)
@@ -65,14 +70,14 @@ static class Recipe
         return MaxValue;
     }
     
-    public static void WriteRecipes(List<string> listOfRecipes)
+    public void WriteRecipes(List<string> listOfRecipes)
     {
         if(UserOptionsRepository.USERFILEOPTION==0){
-            FilesRepositoryText.WriteTextFile(UserOptionsRepository.FILEPATHTEXT,listOfRecipes);
+            filesRepositoryText.WriteFile(UserOptionsRepository.FILEPATHTEXT,listOfRecipes);
         } 
         else
         {
-            FilesRepositoryJSON.WriteJSONFile(UserOptionsRepository.FILEPATHJSON,listOfRecipes);
+            filesRepositoryJSON.WriteFile(UserOptionsRepository.FILEPATHJSON,listOfRecipes);
         }
     }
 
