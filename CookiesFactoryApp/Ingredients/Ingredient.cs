@@ -1,4 +1,4 @@
-class Ingredient
+public abstract class Ingredient
 {
    public int ID;
    public string name;

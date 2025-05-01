@@ -1,6 +1,7 @@
 
-class FilesRepositoryText : IFilesRepository
+public class FilesRepositoryText : IFilesRepository
 {
+
     public string GetFilePath()
     {
         return UserOptionsRepository.FILEPATHTEXT;
@@ -8,7 +9,9 @@ class FilesRepositoryText : IFilesRepository
 
     public List<string> ReadFile(string inputPath){
         System.Console.WriteLine($"Read the file from the path {inputPath}...");
-        return System.IO.File.ReadAllText(inputPath).Split(Environment.NewLine).ToList();
+        var content=System.IO.File.ReadAllText(inputPath).Split(Environment.NewLine).ToList();
+        content=content.Where(x=>String.IsNullOrEmpty(x) is false).ToList();
+        return content;
     }
 
     public void WriteFile(string inputPath, IEnumerable<string> inputContent){

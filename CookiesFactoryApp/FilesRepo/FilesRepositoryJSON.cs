@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-class FilesRepositoryJSON: IFilesRepository
+public class FilesRepositoryJSON: IFilesRepository
 {
     
     public List<string> ReadFile(string inputPath){

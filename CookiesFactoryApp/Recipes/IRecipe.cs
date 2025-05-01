@@ -1,6 +1,6 @@
 interface IRecipe
 {
-    public List<string> GetRecipes();
+    public List<string> GetRecipes(string filePath);
 
     public void PrintRecipes(List<string> listOfRecipes);
 
@@ -8,6 +8,6 @@ interface IRecipe
 
     public int GetMaxID(List<Ingredient> ingredients);
     
-    public void WriteRecipes(List<string> listOfRecipes);
+    public void WriteRecipes(List<string> listOfRecipes, string filePath);
 
 }

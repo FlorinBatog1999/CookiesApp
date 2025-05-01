@@ -1,44 +1,41 @@
 
-class CookiesFactoryApp
+public class CookiesFactoryApp
 {
-    Recipe recipe=new Recipe();
+    IFilesRepository filesRepository;
+    Recipe recipe;
+
+    public CookiesFactoryApp(IFilesRepository filesRepository, Recipe recipe)
+    {
+        this.filesRepository=filesRepository;
+        this.recipe=recipe;
+    }
     public void Run()
     {
-        UserOptionsRepository.ShowUserOption();
+        UserOptionsRepository.PrintMessage($"User file option: {UserOptionsRepository.USERFILEOPTION}");
 
         var listOfFiles=UserOptionsRepository.GeFiles();
 
-        string filePath=UserOptionsRepository.USERFILEOPTION==0 ? new FilesRepositoryText().GetFilePath() : new FilesRepositoryJSON().GetFilePath();
+        string filePath=filesRepository.GetFilePath();
 
-        FilesRepository.CheckFileExistance(listOfFiles,filePath);
+        filesRepository.CheckFileExistance(listOfFiles,filePath);
+
+        UserOptionsRepository.PrintMessage("Type the ingredient ID.");
 
         var userInput=UserOptionsRepository.GetTypedUserContent();
 
         if (!int.TryParse(userInput,out int defaultValue))
         {
-            System.Console.WriteLine("No ingredients have been selected. Recipe will not be saved.");
+            UserOptionsRepository.PrintMessage("No ingredients have been selected. Recipe will not be saved.");
         }
         else{
-            System.Console.WriteLine("Create a new cookie recipe! Available ingredients are:");
-
+            UserOptionsRepository.PrintMessage("Create a new cookie recipe! Available ingredients are:"); 
             IngredientsFactory.PrintIngredients();
-
-            System.Console.WriteLine("Get the ingredients from the database...");
             var listOfIngredients=IngredientsFactory.GetIngredients();
-            
-            System.Console.WriteLine("Get recipes...");
-            var listOfRecipes=recipe.GetRecipes();
-            
-            System.Console.WriteLine("Start to print the recipes...");
+            var listOfRecipes=recipe.GetRecipes(filePath);
             recipe.PrintRecipes(listOfRecipes);
-            
-            System.Console.WriteLine("Add an ingredient by its ID or type anything else if finished.");
             recipe.AddRecipe(userInput,listOfRecipes,listOfIngredients);
-            
-            System.Console.WriteLine("Print the list after inserting the new recipe");
             recipe.PrintRecipes(listOfRecipes);
-            recipe.WriteRecipes(listOfRecipes);
-            
+            recipe.WriteRecipes(listOfRecipes, filePath);
         }
         UserOptionsRepository.Exit();
     }

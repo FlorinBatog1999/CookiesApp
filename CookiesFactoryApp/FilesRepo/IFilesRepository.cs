@@ -1,16 +1,16 @@
-interface IFilesRepository
+public interface IFilesRepository
 {
     public List<string> ReadFile(string inputPath);
     public void WriteFile(string inputPath, IEnumerable<string> inputContent);
     public string GetFilePath();
 
-    public static void CreateFile(string inputPath){
+    public void CreateFile(string inputPath){
         System.Console.WriteLine($"Create the file on the path {inputPath}...");
         System.IO.File.Create(inputPath);
     }
 
         
-    public static void CheckFileExistance(string[] listOfFiles, string filePath){
+    public void CheckFileExistance(string[] listOfFiles, string filePath){
         System.Console.WriteLine($"Check the file existance...");
         if (listOfFiles.Length==0)
         {

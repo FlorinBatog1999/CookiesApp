@@ -1,26 +1,33 @@
-class Recipe: IRecipe
+public class Recipe: IRecipe
 {
-
-    FilesRepositoryText filesRepositoryText;
-    FilesRepositoryJSON filesRepositoryJSON;
-
-
-    public List<string> GetRecipes()
+    IFilesRepository filesRepository;
+    
+    public Recipe(IFilesRepository filesRepositoryParam)
     {
+        this.filesRepository=filesRepositoryParam;
+    }
+
+
+    public List<string> GetRecipes(string filePath)
+    {
+        UserOptionsRepository.PrintMessage("Get recipes...");
         var recipesList=new List<string>();
-        if(UserOptionsRepository.USERFILEOPTION==0)
-        {
-            recipesList=filesRepositoryText.ReadFile(UserOptionsRepository.FILEPATHTEXT);
-            recipesList=recipesList.Where(x=>String.IsNullOrEmpty(x) is false).ToList();
-        }
-        else{
-            recipesList=filesRepositoryJSON.ReadFile(UserOptionsRepository.FILEPATHJSON);
-        }
+        
+        // if(UserOptionsRepository.USERFILEOPTION==0)
+        // {
+        //     recipesList=filesRepository.ReadFile(UserOptionsRepository.FILEPATHTEXT);
+        // }
+        // else{
+        //     recipesList=filesRepository.ReadFile(UserOptionsRepository.FILEPATHJSON);
+        // }
+
+        recipesList=filesRepository.ReadFile(filePath);
 
         return recipesList;
     }
 
     public void PrintRecipes(List<string> listOfRecipes){
+        UserOptionsRepository.PrintMessage("Start to print the recipes...");
         int recipeCounter=1;
         foreach (var recipe in listOfRecipes)
         {
@@ -36,6 +43,8 @@ class Recipe: IRecipe
     }
 
     public List<string> AddRecipe(string userInput,List<string> recipesList, List<Ingredient> listOfIngredients){
+        UserOptionsRepository.PrintMessage("Add an ingredient by its ID or type anything else if finished.");
+        
         var maxID=GetMaxID(listOfIngredients);
         List<string> newRecipe=new List<string>();
 
@@ -44,12 +53,12 @@ class Recipe: IRecipe
             if (Convert.ToInt32(userInput)<0 || Convert.ToInt32(userInput)>maxID)
             {
                 Console.WriteLine("Try again!");
-                userInput=Console.ReadLine();
+                userInput=UserOptionsRepository.GetTypedUserContent();
                 continue;
             }
             userInput=userInput.Replace(Environment.NewLine,String.Empty).Trim();
             newRecipe.Add(userInput);
-            userInput=Console.ReadLine();
+            userInput=UserOptionsRepository.GetTypedUserContent();
         }
         System.Console.WriteLine($"Recipe added:{String.Join(",",newRecipe)}");
         recipesList.Add(String.Join(",",newRecipe));
@@ -70,15 +79,16 @@ class Recipe: IRecipe
         return MaxValue;
     }
     
-    public void WriteRecipes(List<string> listOfRecipes)
+    public void WriteRecipes(List<string> listOfRecipes, string filePath)
     {
-        if(UserOptionsRepository.USERFILEOPTION==0){
-            filesRepositoryText.WriteFile(UserOptionsRepository.FILEPATHTEXT,listOfRecipes);
-        } 
-        else
-        {
-            filesRepositoryJSON.WriteFile(UserOptionsRepository.FILEPATHJSON,listOfRecipes);
-        }
+        // if(UserOptionsRepository.USERFILEOPTION==0){
+        //     filesRepository.WriteFile(UserOptionsRepository.FILEPATHTEXT,listOfRecipes);
+        // } 
+        // else
+        // {
+        //     filesRepository.WriteFile(UserOptionsRepository.FILEPATHJSON,listOfRecipes);
+        // }
+        filesRepository.WriteFile(filePath,listOfRecipes);
     }
 
 }
